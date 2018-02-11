@@ -26,7 +26,9 @@ For higher levels we are interested in seeing code that is:
 - all prices are stored as integers (in cents)
 
 ## How to test the challenge
-From backend folder
-Run **bundle** to download rspec gem
-Run **rspec challenge_spec.rb** to see if tests pass
+From backend folder:
+
+- Run **bundle** to download rspec gem
+- Run **rspec challenge_spec.rb** to see if tests pass
+
 There are other specs in specs folder
