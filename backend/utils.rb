@@ -10,4 +10,14 @@ module Utils
     end
     [end_day - start_day, day - start_day].min
   end
+
+
+  # returns the opposite type of payment for a specific type
+  def self.opposite_payment_type(type)
+    if type == 'credit'
+      'debit'
+    else
+      'credit'
+    end
+  end
 end
