@@ -1,6 +1,7 @@
 require 'date'
 require_relative './car'
 require_relative './utils'
+
 # A class that hold information about renting a particular car
 class Rental
   attr_reader :id
@@ -15,7 +16,7 @@ class Rental
     @deductible_reduction = json_rental['deductible_reduction']
 
     # computing some advanced attributes
-    @price = @car.price(rental_days, @distance)
+    @price = @car.renting_price(rental_days, @distance)
     @commission = compute_commission
   end
 
@@ -31,7 +32,7 @@ class Rental
     @distance = json_modifications['distance'] if json_modifications['distance']
 
     # recompute calculated attributes and generate the new output
-    @price = @car.price(rental_days, @distance)
+    @price = @car.renting_price(rental_days, @distance)
     @commission = compute_commission
 
     new_output = generate_output_detail
